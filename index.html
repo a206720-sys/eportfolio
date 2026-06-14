@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A206720 JIA ZHU e-Portfolio</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #38bdf8;
+      --accent: #facc15;
+      --bg: #f3f8ff;
+      --card: #ffffff;
+      --text: #102033;
+      --muted: #5b6b80;
+      --shadow: 0 10px 30px rgba(37, 99, 235, 0.14);
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 90px 20px 70px; text-align: center; }
+    header h1 { font-size: clamp(2.1rem, 5vw, 4rem); margin-bottom: 12px; letter-spacing: -1px; }
+    header p { max-width: 850px; margin: 0 auto; font-size: 1.05rem; opacity: 0.95; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08); }
+    nav ul { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; list-style: none; padding: 12px 16px; }
+    nav a { color: var(--text); text-decoration: none; font-weight: 700; padding: 9px 14px; border-radius: 999px; transition: 0.2s ease; }
+    nav a:hover, nav a:focus { background: var(--primary); color: white; outline: none; }
+    main { max-width: 1180px; margin: 0 auto; padding: 36px 18px 60px; }
+    section { margin-bottom: 54px; scroll-margin-top: 90px; }
+    .section-title { font-size: 2rem; margin-bottom: 16px; color: var(--primary); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .card { background: var(--card); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); border: 1px solid rgba(37, 99, 235, 0.10); }
+    .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.35rem; }
+    .card p { color: var(--muted); margin-bottom: 12px; }
+    .profile-card { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; }
+    .profile-badge { background: linear-gradient(135deg, #fff7cc, #eff8ff); border: 2px solid rgba(250, 204, 21, 0.55); text-align: center; }
+    .profile-badge strong { display: block; color: var(--primary); font-size: 1.35rem; margin-bottom: 6px; }
+    .tag { display: inline-block; background: rgba(37, 99, 235, 0.10); color: var(--primary); padding: 6px 10px; border-radius: 999px; margin: 4px 5px 4px 0; font-weight: 700; font-size: 0.9rem; }
+    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 14px 0; overflow: hidden; border-radius: 16px; background: #dbeafe; }
+    .video iframe { width: 100%; height: 100%; border: 0; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .btn { display: inline-block; text-decoration: none; background: var(--primary); color: white; padding: 10px 15px; border-radius: 999px; font-weight: 700; transition: 0.2s ease; }
+    .btn:hover, .btn:focus { background: #1d4ed8; outline: none; transform: translateY(-1px); }
+    .highlight { background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(250,204,21,0.18)); border-left: 6px solid var(--primary); }
+    ul.resource-list { margin-left: 18px; color: var(--muted); }
+    footer { background: var(--text); color: white; text-align: center; padding: 26px 16px; }
+    footer p { opacity: 0.9; }
+    @media (max-width: 760px) {
+      header { padding: 70px 16px 48px; }
+      .profile-card { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.65rem; }
+      nav a { font-size: 0.9rem; padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="home">
+    <h1>JIA ZHU e-Portfolio</h1>
+    <p>Mobile Programming / Mobile Application Programming portfolio for TK2323/TM2213. This portfolio documents my learning journey from Lab 1 to Project 2, including Jetpack Compose, Room Database, Firebase Firestore, Web API, and sensor integration.</p>
+  </header>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section aria-labelledby="profile-title">
+      <div class="card profile-card">
+        <div>
+          <h2 id="profile-title" class="section-title">Student Profile</h2>
+          <p><strong>Name:</strong> JIA ZHU</p>
+          <p><strong>Matric No:</strong> A206720</p>
+          <p><strong>Programme:</strong> 2AKIT1</p>
+          <p><strong>Instructor:</strong> Izwan</p>
+          <p><strong>Introduction:</strong> I am learning mobile application development using Kotlin and Jetpack Compose. My goal is to build apps that are useful, easy to use, and connected with real mobile features such as local databases, cloud services, APIs, and sensors.</p>
+        </div>
+        <div class="card profile-badge" aria-label="SDG information">
+          <strong>SDG 3</strong>
+          <p>Good Health and Well-Being</p>
+          <p>This SDG matters to me because students need simple tools to build healthier daily habits.</p>
+        </div>
+      </div>
+    </section>
+    <section id="labs" aria-labelledby="labs-title">
+      <h2 id="labs-title" class="section-title">Lab Submissions</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Lab 1 — UI</h3>
+          <p>This lab introduced the basic structure of a Jetpack Compose user interface.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/pGkkcLpchbg" title="Lab 1 UI video" allowfullscreen></iframe></div>
+          <p><strong>Reflection:</strong> I learned how to create simple UI layouts using Compose components. This lab helped me understand how text, buttons, and layout containers are arranged on the screen.</p>
+        </article>
+        <article class="card">
+          <h3>Lab 2 — Interaction</h3>
+          <p>This lab focused on user interaction and simple state changes in the app.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/2j7Q758gjoc" title="Lab 2 Interaction video" allowfullscreen></iframe></div>
+          <p><strong>Reflection:</strong> I learned how user input and button actions can change what appears on the screen. It helped me understand the importance of state in a mobile application.</p>
+        </article>
+        <article class="card">
+          <h3>Lab 3 — Material Design</h3>
+          <p>This lab improved the app design using Material components and better UI styling.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/AdIpFg_Efqo" title="Lab 3 Material Design video" allowfullscreen></iframe></div>
+          <p><strong>Reflection:</strong> I learned how to make the app look cleaner and more consistent. Material Design helped me improve spacing, colors, buttons, and overall visual structure.</p>
+        </article>
+        <article class="card">
+          <h3>Lab 4 — Navigation</h3>
+          <p>This lab introduced multi-screen navigation in a Compose application.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/14OoG-rkJB0" title="Lab 4 Navigation video" allowfullscreen></iframe></div>
+          <p><strong>Reflection:</strong> I learned how to move between different screens using navigation routes. This was important because later projects required multiple connected screens.</p>
+        </article>
+        <article class="card">
+          <h3>Lab 5 — Room</h3>
+          <p>This lab introduced Room Database for local data storage.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/KBxjy1xYqMw" title="Lab 5 Room video" allowfullscreen></iframe></div>
+          <p><strong>Reflection:</strong> I learned how to save data permanently on the device using Room. This helped me understand local persistence and how apps can work even after reopening.</p>
+        </article>
+      </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Project Submissions</h2>
+      <div class="grid">
+        <article class="card highlight">
+          <h3>Project 1 — WellTrack</h3>
+          <p><strong>Problem Statement:</strong> Students may forget to monitor daily health habits such as water intake, sleep, and exercise. WellTrack provides a simple multi-screen app to help record and review these habits.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/Gh2Dn121pKE" title="Project 1 VSR video" allowfullscreen></iframe></div>
+          <p><strong>Lessons learned:</strong> In Project 1, I learned how to combine UI, navigation, and ViewModel state management. I also learned how to organize app screens based on one SDG theme.</p>
+          <div class="button-row"><a class="btn" href="https://github.com/a206720-sys/A206720_JIAZHU_Izwan_Project1" target="_blank" rel="noopener">View on GitHub</a></div>
+        </article>
+        <article class="card highlight">
+          <h3>Project 2 — WellTrack Advanced</h3>
+          <p><strong>Problem Statement:</strong> Students need a health tracking app that can store data locally, connect to cloud storage, fetch internet data, and use phone hardware. Project 2 upgrades WellTrack with Room, Firebase Firestore, Web API, and accelerometer sensor integration.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/CfKp9xVX2tY" title="Project 2 VSR video" allowfullscreen></iframe></div>
+          <p><strong>Lessons learned:</strong> In Project 2, I learned how to connect different technical features into one complete app. I practiced Room Database, Firebase Firestore, REST API data loading, and SensorManager for accelerometer data.</p>
+          <div class="button-row"><a class="btn" href="https://github.com/a206720-sys/A206720_JIAZHU_Izwan_Project2" target="_blank" rel="noopener">View on GitHub</a></div>
+        </article>
+      </div>
+    </section>
+    <section id="reflection" aria-labelledby="reflection-title">
+      <div class="card">
+        <h2 id="reflection-title" class="section-title">Reflection & Learning Journey</h2>
+        <p>From Lab 1 to Project 2, I gradually learned how a simple Compose screen can become a complete mobile application. At first, I focused on UI and interaction, then I learned navigation, local storage, and more advanced app features. Project 2 was challenging because I had to combine Room Database, Firebase Firestore, Web API, and sensor integration in one app. Through this process, I improved my problem-solving skills and understood how mobile apps can support real SDG problems.</p>
+      </div>
+    </section>
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="card">
+        <h2 id="skills-title" class="section-title">Skills & Tech Stack</h2>
+        <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Material 3</span><span class="tag">Navigation Compose</span><span class="tag">ViewModel</span><span class="tag">Room Database</span><span class="tag">Firebase Firestore</span><span class="tag">REST API</span><span class="tag">Accelerometer Sensor</span><span class="tag">GitHub</span><span class="tag">GitHub Pages</span>
+      </div>
+    </section>
+    <section id="resources" aria-labelledby="resources-title">
+      <div class="card">
+        <h2 id="resources-title" class="section-title">Resources & References</h2>
+        <ul class="resource-list">
+          <li>Android Studio</li>
+          <li>Kotlin and Jetpack Compose</li>
+          <li>AndroidX Navigation Compose</li>
+          <li>Room Database</li>
+          <li>Firebase Firestore</li>
+          <li>External REST API for online advice data</li>
+          <li>Android SensorManager and SensorEventListener</li>
+          <li>GitHub and GitHub Pages</li>
+          <li>AI assistance was used to help understand errors, improve code structure, prepare explanations, and write documentation. The final project was tested and verified by the student.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>JIA ZHU — A206720 — 2026</p>
+    <p>TK2323/TM2213 Mobile Programming / Mobile Application Programming</p>
+  </footer>
+</body>
+</html>
